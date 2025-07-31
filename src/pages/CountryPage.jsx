@@ -9,7 +9,7 @@ const CountryPage = () => {
       .then((resp) => {
         resp.json().then((data) => setCountries(data));
       })
-      .catch((err) => console.log("Error fetching data: ", err));
+      .catch((err) => console.error("Error fetching data: ", err));
   }, []);
   return (
     <div

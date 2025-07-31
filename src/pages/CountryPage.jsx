@@ -5,12 +5,11 @@ const CountryPage = () => {
   const [countries, setCountries] = React.useState([]);
 
   useEffect(() => {
-    fetch(" https://xcountries-backend.azurewebsites.net/all").then((resp) => {
-      resp
-        .json()
-        .then((data) => setCountries(data))
-        .catch((err) => console.log("Error fetching data: ", err));
-    });
+    fetch(" https://xcountries-backend.azurewebsites.net/all")
+      .then((resp) => {
+        resp.json().then((data) => setCountries(data));
+      })
+      .catch((err) => console.log("Error fetching data: ", err));
   }, []);
   return (
     <div
